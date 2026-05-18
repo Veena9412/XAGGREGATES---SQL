@@ -1,0 +1,3 @@
+-- Write a query that returns the customer_id, the total spent amount (rename this column as total_amount), and the number of rentals (rename this column as total_rentals) of the customers that paid more than $100 in total and made less than 25 rentals.
+-- Write Query Here
+select customer_id, SUM(amount) as total_amount, COUNT(*) as total_rentals from payment  GROUP BY customer_id having sum(amount)>100 and count(*)<25;
